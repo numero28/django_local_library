@@ -1,0 +1,6 @@
+1. first get the repository url from GitHub
+2. git clone <repository_url>
+3. git fetch main
+4. git pull main
+5. git remote -v
+6. 
