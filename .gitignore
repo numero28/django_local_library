@@ -178,3 +178,6 @@ cython_debug/
 
 # Database
 *.sqlite3
+
+#My files
+*.vdt
