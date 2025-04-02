@@ -1,0 +1,25 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+  <h1>Local Library Author</h1>
+  <p>
+    Welcome to LocalLibrary, a website developed by
+    <em>Mozilla Developer Network</em>!
+  </p>
+  <h2>Dynamic content</h2>
+  <p>The library has the following authors:</p>
+  
+    {% if authors %}
+    <ul>
+        {% for author in authors %}
+        <li><strong>Author {{ author.id }} :</strong> <a href = "{% url 'catalog:author_detail' author.id %}">{{ author.first_name }}, {{author.last_name }}</a></li>
+        <div>
+            below
+            {{author.book_set.all}}
+        </div>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <h1>There are no authors available</h1>     
+    {% endif %}
+
+{% endblock %}

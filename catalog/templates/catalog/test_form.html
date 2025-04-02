@@ -1,0 +1,29 @@
+{% extends 'catalog/base.html' %}
+
+{% block title %}
+    Test Forms
+{% endblock %}
+
+{% block content %}
+    <form action="catalog/test_form_detail.html" method="post">
+        {% csrf_token %}
+        
+        <label for="team_name">Enter name:</label>
+        <input 
+            id="team_name"
+            type="text"
+            name="name_field"
+            value="Default name for team." />
+        <input type="submit" value="OK"/>
+    </form>
+    <br>
+    <form>
+        <label for="">Number 1:</label>
+        <input type="text"/><br><br>
+        <label for="">Number 2:</label>
+        <input type="text"/><br><br>
+        <label for="">Sum:</label>
+        <input type="text" /><br><br>
+        <input type="submit" value="Sum"/>
+    </form>
+{% endblock %}
